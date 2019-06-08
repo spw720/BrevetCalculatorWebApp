@@ -10,10 +10,10 @@ Flask-Login, including remember me functionality.
 """
 from flask import Flask, request, render_template, redirect, url_for, flash
 from flask_login import (LoginManager, current_user, login_required,
-                            login_user, logout_user, UserMixin, 
+                            login_user, logout_user, UserMixin,
                             confirm_login, fresh_login_required)
 
-# your user class 
+# your user class
 class User(UserMixin):
     def __init__(self, name, id, active=True):
         self.name = name
@@ -46,7 +46,7 @@ login_manager.login_view = "login"
 login_manager.login_message = u"Please log in to access this page."
 login_manager.refresh_view = "reauth"
 
-# step 2 in slides 
+# step 2 in slides
 @login_manager.user_loader
 def load_user(id):
     return USERS.get(int(id))

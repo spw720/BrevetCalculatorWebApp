@@ -1,8 +1,9 @@
 FROM python:3
+MAINTAINER Sean Wilson "swilso17@uoregon.edu"
 RUN apt-get update -y
 RUN apt-get install -y python-pip python-dev build-essential
 COPY . /app
 WORKDIR /app
 RUN pip install -r requirements.txt
-RUN python testToken.py
-RUN python password.py
+ENTRYPOINT ["python"]
+CMD ["flask_brevets.py"]
