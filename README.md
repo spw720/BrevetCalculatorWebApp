@@ -1,4 +1,4 @@
-Brevet time calculator.
+# Brevet time calculator.
 
 Uses Docker + Flask + Javascript + AJAX + MongoDB + REST + AUTHO
 
